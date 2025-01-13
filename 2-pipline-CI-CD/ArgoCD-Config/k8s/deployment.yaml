@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-fbc
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app-fbc
+  template:
+    metadata:
+      labels:
+        app: app-fbc
+  spec:
+  containers:
+        - name: app-fbc
+          image: dafegave25/app-fbc:node
+          ports:
+            - containerPort: 3000
+
